@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-labelledby="title desc">
+  <title id="title">隠岐の島町の案内図</title>
+  <desc id="desc">隠岐の島町だけを描いた簡略地図。西郷、布施、五箇、都万、中村、西郷港、隠岐世界ジオパーク空港の位置を示しています。</desc>
+  <defs>
+    <style>
+      .sea { fill: #bfeaf5; }
+      .land { fill: #56ad5f; stroke: #27723b; stroke-width: 3; }
+      .line { fill: none; stroke: #1f4d7a; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 8 10; }
+      .air { fill: none; stroke: #a46f1b; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 10 9; }
+      .label { font-family: "Hiragino Sans", "Yu Gothic", sans-serif; font-size: 30px; font-weight: 800; fill: #14365d; }
+      .small { font-size: 23px; }
+      .white-label { fill: #fff; }
+      .pill { fill: #fff; stroke: #14365d; stroke-width: 3; }
+      .dark-pill { fill: #14365d; stroke: #14365d; stroke-width: 3; }
+      .airport-pill { fill: #fff9d8; stroke: #8a6819; stroke-width: 3; }
+      .pin { fill: #fff; stroke: #14365d; stroke-width: 4; }
+      .airport-pin { fill: #fff9d8; stroke: #8a6819; stroke-width: 4; }
+      .dot { fill: #14365d; }
+      .mainland { fill: #eef8f8; }
+      .caption { font-size: 22px; font-weight: 700; fill: #14365d; }
+    </style>
+  </defs>
+
+  <rect class="sea" width="900" height="680" />
+
+  <path class="mainland" d="M500 560c88-58 180-90 294-99 42-3 73 2 106 13v206H500Z" opacity="0.9" />
+  <text class="caption" x="650" y="612">島根半島方面</text>
+
+  <path
+    class="land"
+    d="M442 56c42 7 67 21 85 51 25 4 46 19 53 44 26 14 42 39 38 71 19 21 27 49 18 76 16 26 11 54-9 74 1 35-17 65-49 80-18 35-54 50-91 43-28 23-67 25-98 8-31 17-68 13-91-11-35 3-66-14-81-45-31-9-51-37-52-70-25-21-32-57-16-87-13-31-5-65 22-86-2-37 20-68 56-77 14-33 45-54 82-50 26-24 62-31 94-21 13-5 26-5 39 0Z"
+  />
+
+  <path class="line" d="M534 392c93 32 169 70 230 116" />
+  <path class="line" d="M548 376c92 2 171 25 236 68" />
+  <path class="air" d="M518 304c61 47 105 99 133 157" />
+
+  <circle class="pin" cx="528" cy="382" r="10" />
+  <circle class="airport-pin" cx="500" cy="315" r="10" />
+
+  <rect class="pill" x="542" y="345" width="164" height="58" rx="27" />
+  <path d="M570 381h39c10 0 18-8 18-18v-13h-18v-8h-26v8h-30v13c0 10 8 18 17 18Z" fill="#14365d" opacity="0.16" />
+  <text class="label small" x="590" y="382">西郷港</text>
+
+  <rect class="airport-pill" x="526" y="273" width="280" height="58" rx="27" />
+  <path d="M557 309l34-14 5 5-24 21h-12l7-12h-10Z" fill="#8a6819" />
+  <text class="label small" x="602" y="310" fill="#8a6819">隠岐世界ジオパーク空港</text>
+
+  <rect class="dark-pill" x="410" y="200" width="118" height="58" rx="29" />
+  <text class="label white-label" x="438" y="239">島後</text>
+  <text class="label" x="225" y="228">隠岐の島町</text>
+
+  <g>
+    <circle class="dot" cx="482" cy="385" r="8" />
+    <text class="label small" x="388" y="420">西郷</text>
+  </g>
+  <g>
+    <circle class="dot" cx="563" cy="237" r="8" />
+    <text class="label small" x="583" y="242">布施</text>
+  </g>
+  <g>
+    <circle class="dot" cx="313" cy="206" r="8" />
+    <text class="label small" x="235" y="212">五箇</text>
+  </g>
+  <g>
+    <circle class="dot" cx="276" cy="404" r="8" />
+    <text class="label small" x="197" y="410">都万</text>
+  </g>
+  <g>
+    <circle class="dot" cx="425" cy="122" r="8" />
+    <text class="label small" x="444" y="130">中村</text>
+  </g>
+
+  <circle cx="763" cy="508" r="7" fill="#fff" stroke="#1f4d7a" stroke-width="4" />
+  <circle cx="786" cy="444" r="7" fill="#fff" stroke="#1f4d7a" stroke-width="4" />
+  <text class="caption" x="707" y="547">フェリー航路</text>
+  <text class="caption" x="657" y="488" fill="#8a6819">空路</text>
+
+  <g transform="translate(78 520)">
+    <circle cx="68" cy="68" r="52" fill="#fff" opacity="0.62" stroke="#6bb7c9" stroke-width="4" />
+    <path d="M36 82c18-31 47-53 84-63" fill="none" stroke="#14365d" stroke-width="3" />
+    <circle cx="102" cy="26" r="6" fill="#14365d" />
+    <text class="caption" x="130" y="75">本州との位置関係</text>
+  </g>
+</svg>
