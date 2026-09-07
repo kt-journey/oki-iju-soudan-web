@@ -21,7 +21,7 @@
     <meta property="og:url" content="form.html" />
     <meta property="og:site_name" content="おき暮らしごっこ" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:image" content="images/ogp.jpg" />
+    <meta property="og:image" content="images/ogp.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="隠岐の島で暮らしを試す、おき暮らしごっこの参加者イメージ" />
@@ -31,14 +31,14 @@
       name="twitter:description"
       content="公式LINEで案内された方向けの相談予約フォームです。送信時点では参加確定ではありません。"
     />
-    <meta name="twitter:image" content="images/ogp.jpg" />
+    <meta name="twitter:image" content="images/ogp.webp" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="form-page">
     <header class="site-header" aria-label="フォームヘッダー">
       <a class="site-logo" href="index.html" aria-label="おき暮らしごっこ トップへ">
         <span class="site-logo__main">おき暮らしごっこ</span>
-        <span class="site-logo__sub">隠岐の島移住相談</span>
+        <img class="site-logo__sub" src="images/logo.svg" alt="隠岐の島移住相談" />
       </a>
     </header>
 
@@ -46,30 +46,71 @@
       <section class="form-hero" aria-labelledby="form-title">
         <div class="container form-hero__inner">
           <p class="section-label">隠岐の島町移住体験プログラム</p>
-          <h1 id="form-title">相談予約フォーム</h1>
+          <h1 id="form-title">参加相談・事前確認フォーム</h1>
           <p>
-            滞在希望時期や、島で試してみたいことを教えてください。
-            送信内容を確認したうえで、公式LINEで日程調整、Zoom面談、滞在先との調整を進めます。
-            このフォームの送信時点では参加確定ではありません。
+            「おき暮らしごっこ」への参加をご検討いただきありがとうございます。<br>
+            このフォームでは、参加希望内容の確認と、募集要項・参加条件・注意事項への同意を行います。
+            <br><strong>フォーム送信＝参加確定ではありません。</strong><br>送信後、担当者との日程調整・事前面談等を経て、参加決定となります。
           </p>
         </div>
       </section>
 
       <section class="section form-section">
         <div class="container form-layout">
-          <form class="consult-form" action="#" method="post">
+          <form
+            class="consult-form"
+            id="consult-form"
+            action="https://formsubmit.co/soudan@oki-ijukeikaku.net"
+            method="post"
+            enctype="multipart/form-data"
+            accept-charset="UTF-8"
+          >
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="【おき暮らしごっこ】新規参加相談を受け付けました"
+            />
+            <input
+              type="hidden"
+              name="_next"
+              id="form-next"
+              value="https://oki-ijukeikaku.net/ijutaiken/thanks.html"
+            />
+            <input type="hidden" name="_replyto" id="form-replyto" value="" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="おき暮らしごっこへの参加相談を受け付けました。
+
+このたびは「おき暮らしごっこ」へ参加相談をお送りいただき、ありがとうございます。
+
+担当者が内容を確認後、ご連絡いたします。
+
+なお、このフォームを送信した時点では参加確定ではありません。
+日程や滞在内容等の調整後、双方合意のうえ参加決定となります。
+
+また、フォーム送信時に募集要項・参加条件・注意事項への同意を受け付けています。
+
+どうぞよろしくお願いいたします。
+
+隠岐移住計画"
+            />
+            <input type="hidden" name="_url" id="form-url" value="" />
+            <input type="hidden" name="受付ステータス" value="新規受付／参加未確定" />
+            <input type="hidden" name="同意内容バージョン" value="2026-09-01_v1.0" />
             <fieldset>
               <legend>基本情報</legend>
 
               <label class="field">
                 <span>名前 <strong>必須</strong></span>
-                <input type="text" name="name" autocomplete="name" required />
+                <input type="text" name="氏名" autocomplete="name" required />
               </label>
 
               <label class="field">
                 <span>住所 <strong>必須</strong></span>
                 <textarea
-                  name="address"
+                  name="住所"
                   rows="3"
                   autocomplete="street-address"
                   required
@@ -82,7 +123,7 @@
                   <span>生年月日 <strong>必須</strong></span>
                   <input
                     type="text"
-                    name="birthdate"
+                    name="生年月日"
                     id="birthdate"
                     inputmode="numeric"
                     autocomplete="bday"
@@ -95,13 +136,13 @@
                 <div class="field field--output" aria-live="polite">
                   <span>年齢</span>
                   <output id="age-output">生年月日を入力すると表示されます</output>
-                  <input type="hidden" name="age" id="age-value" />
+                  <input type="hidden" name="年齢" id="age-value" />
                 </div>
               </div>
 
               <label class="field">
                 <span>電話番号 <strong>必須</strong></span>
-                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required />
+                <input type="tel" name="電話番号" autocomplete="tel" inputmode="tel" required />
               </label>
 
               <label class="field">
@@ -115,7 +156,7 @@
 
               <label class="field">
                 <span>このプログラムをどこで知りましたか <strong>必須</strong></span>
-                <select name="source" required>
+                <select name="この企画を知ったきっかけ" required>
                   <option value="">選択してください</option>
                   <option value="公式LINE">公式LINE</option>
                   <option value="知人・友人の紹介">知人・友人の紹介</option>
@@ -128,7 +169,7 @@
               <label class="field">
                 <span>滞在中にどんなことをやってみたいですか <strong>必須</strong></span>
                 <textarea
-                  name="stay_purpose"
+                  name="滞在中にやってみたいこと"
                   rows="6"
                   required
                   placeholder="例：仕事環境を試したい、地域の人と話したい、空き家や買い物環境を見てみたい"
@@ -138,7 +179,7 @@
               <label class="field">
                 <span>ご自身のSNSプロフィール</span>
                 <textarea
-                  name="sns_profiles"
+                  name="SNSアカウント"
                   rows="4"
                   placeholder="Instagram、X、noteなどのURLやアカウント名を入力してください"
                 ></textarea>
@@ -148,7 +189,7 @@
                 <span>来訪予定時期 <strong>必須</strong></span>
                 <input
                   type="text"
-                  name="visit_period"
+                  name="希望滞在時期"
                   required
                   placeholder="例：2026年7月頃、秋頃、まだ未定 など"
                 />
@@ -156,7 +197,7 @@
             </fieldset>
 
             <label class="consent">
-              <input type="checkbox" name="privacy_consent" value="同意する" required />
+              <input type="checkbox" name="個人情報の取扱いへの同意" value="同意する" required />
               <span>入力内容を相談予約と日程調整のために利用することに同意します。</span>
             </label>
 
@@ -193,14 +234,15 @@
             </details>
 
             <label class="consent">
-              <input type="checkbox" name="terms_consent" value="同意する" required />
-              <span>上記の募集要項・参加条件・注意事項を確認し、同意します。</span>
+              <input type="checkbox" name="募集要項・参加条件・注意事項への同意" value="同意する" required />
+              <span>私は、上記の募集要項・参加条件・注意事項をすべて確認し、内容に同意したうえで参加を希望します。</span>
             </label>
 
             <div class="form-actions">
               <button class="button button--accent" type="submit">送信する</button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
               <p>
-                送信後、担当者から公式LINEでご連絡します。日程や希望内容を確認したうえで、Zoom面談、滞在先との調整へ進みます。
+                送信後、担当者から公式LINEでご連絡します。<br>日程や希望内容を確認したうえで、Zoom面談、滞在先との調整へ進みます。
               </p>
             </div>
           </form>
@@ -238,6 +280,24 @@
       const birthdateInput = document.getElementById("birthdate");
       const ageOutput = document.getElementById("age-output");
       const ageValue = document.getElementById("age-value");
+      const consultForm = document.getElementById("consult-form");
+      const formStatus = document.getElementById("form-status");
+      const submitButton = consultForm.querySelector('button[type="submit"]');
+      const formUrl = document.getElementById("form-url");
+      const formNext = document.getElementById("form-next");
+      const formReplyTo = document.getElementById("form-replyto");
+      const emailInput = consultForm.querySelector('input[name="email"]');
+      const origin =
+        window.location.protocol === "file:"
+          ? "http://127.0.0.1:4173/"
+          : window.location.href;
+
+      formUrl.value = new URL("form.html", origin).href;
+      formNext.value = new URL("thanks.html", origin).href;
+
+      const syncReplyTo = () => {
+        formReplyTo.value = emailInput.value.trim();
+      };
 
       const resetAge = () => {
         ageOutput.textContent = "生年月日を入力すると表示されます";
@@ -305,6 +365,28 @@
       birthdateInput.addEventListener("input", () => {
         birthdateInput.value = formatBirthdate(birthdateInput.value);
         updateAge();
+      });
+
+      const setFormStatus = (message, type = "info") => {
+        formStatus.textContent = message;
+        formStatus.dataset.type = type;
+      };
+
+      emailInput.addEventListener("input", syncReplyTo);
+      emailInput.addEventListener("change", syncReplyTo);
+
+      consultForm.addEventListener("submit", (event) => {
+        updateAge();
+        syncReplyTo();
+
+        if (!consultForm.checkValidity()) {
+          event.preventDefault();
+          consultForm.reportValidity();
+          return;
+        }
+
+        submitButton.disabled = true;
+        setFormStatus("送信内容を送信しています。", "info");
       });
     </script>
   </body>

@@ -21,7 +21,7 @@
     <meta property="og:url" content="./" />
     <meta property="og:site_name" content="おき暮らしごっこ" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:image" content="images/ogp.jpg" />
+    <meta property="og:image" content="images/ogp.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="隠岐の島で暮らしを試す、おき暮らしごっこの参加者イメージ" />
@@ -31,7 +31,7 @@
       name="twitter:description"
       content="仕事環境・買い物・移動・人との距離感を、移住前に確かめるためのお試し滞在プログラムです。"
     />
-    <meta name="twitter:image" content="images/ogp.jpg" />
+    <meta name="twitter:image" content="images/ogp.webp" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -62,13 +62,13 @@
     <header class="site-header" aria-label="サイトヘッダー">
       <a class="site-logo" href="#top" aria-label="おき暮らしごっこ トップへ">
         <span class="site-logo__main">おき暮らしごっこ</span>
-        <span class="site-logo__sub">隠岐の島移住相談</span>
+        <img class="site-logo__sub" src="images/logo.svg" alt="隠岐の島移住相談" />
       </a>
       <nav class="site-nav" aria-label="主要ナビゲーション">
-        <a href="#about">ごっこについて</a>
+        <a href="#about">おき暮らしごっこについて</a>
         <a href="#island">島について</a>
         <a href="#stay">過ごし方</a>
-        <a href="#hosts">受け入れ先</a>
+        <!-- <a href="#hosts">受け入れ先</a> -->
         <a href="#conditions">条件</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -78,13 +78,13 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__media" aria-hidden="true">
-          <img src="images/hero-people.jpg" alt="" />
+          <img src="images/hero-sea.webp" alt="" />
           </div>
           <div class="container hero__inner">
             <div class="hero__copy">
               <ul class="hero__badges" aria-label="プログラムの主な条件">
-                <li><strong>13泊14日〜</strong><span>暮らしを体験</span></li>
-                <li><strong>70,000円〜</strong><span>滞在費補助</span></li>
+                <li><strong>暮らしを体験</strong><span>13泊14日〜</span></li>
+                <li><strong>滞在費補助</strong><span>70,000円〜</span></li>
               </ul>
               <h1 id="hero-title">
                 <span>隠岐の島で13泊14日〜</span>
@@ -102,22 +102,28 @@
         <div class="container intro__inner">
           <p class="brand-word"><span>おき暮らしごっこ</span><small>とは？</small></p>
           <p class="intro__text">
-            いきなり移住ではなく、まずは「暮らしの練習」から。
-            島での日常にふれて、自分に合うかどうかを確かめるための入口です。
+            <span>いきなり移住ではなく、まずは「暮らしの練習」から。</span>
+            <span>島での日常にふれて、自分に合うかどうかを確かめるための入口です。</span>
           </p>
           <div class="features" aria-label="プログラムの特徴">
             <article class="feature">
-              <span class="feature__icon" aria-hidden="true">イラスト</span>
-              <h2>移住後の後悔を減らす</h2>
+              <span class="feature__icon" aria-hidden="true">
+                <img src="images/icon-life.svg" alt="" />
+              </span>
+              <h2>暮らしをイメージする</h2>
               <p>観光では分からない、仕事・買い物・移動の現実を先に確認できます。</p>
             </article>
             <article class="feature">
-              <span class="feature__icon" aria-hidden="true">イラスト</span>
+              <span class="feature__icon" aria-hidden="true">
+                <img src="images/icon-people.svg" alt="" />
+              </span>
               <h2>人との距離感を知る</h2>
               <p>滞在中の相談や交流を通して、自分に合う関わり方を確かめます。</p>
             </article>
             <article class="feature">
-              <span class="feature__icon" aria-hidden="true">イラスト</span>
+              <span class="feature__icon" aria-hidden="true">
+                <img src="images/icon-note.svg" alt="" />
+              </span>
               <h2>感じたことを残す</h2>
               <p>滞在中に見つけたことをSNSに残し、自分の判断材料として整理できます。</p>
             </article>
@@ -214,7 +220,7 @@
         </div>
       </section>
 
-      <section id="hosts" class="section section--soft">
+      <!-- <section id="hosts" class="section section--soft">
         <div class="container">
           <div class="section-heading">
             <p class="section-label">受け入れ先</p>
@@ -226,28 +232,70 @@
 
           <ul class="host-list" aria-label="移住受け入れ先一覧">
             <li>
-              <span>01</span>
-              <strong>くすぶるハウス</strong>
+              <figure class="host-card__photo">
+                <img src="images/host1.webp" alt="くすぶるハウスの外観" />
+              </figure>
+              <div class="host-card__body">
+                <div class="host-card__head">
+                  <span>01</span>
+                  <strong>くすぶるハウス</strong>
+                </div>
+                <p>肩の力を抜いて、まずは島での普段の時間を過ごしてみてください。</p>
+              </div>
             </li>
             <li>
-              <span>02</span>
-              <strong>ゲストハウス碧</strong>
+              <figure class="host-card__photo">
+                <span>宿の写真</span>
+              </figure>
+              <div class="host-card__body">
+                <div class="host-card__head">
+                  <span>02</span>
+                  <strong>ゲストハウス碧</strong>
+                </div>
+                <p>海の近くで、仕事の合間に外へ出るような暮らしを試してもらえたら。</p>
+              </div>
             </li>
             <li>
-              <span>03</span>
-              <strong>齋藤さんエアビ</strong>
+              <figure class="host-card__photo">
+                <span>宿の写真</span>
+              </figure>
+              <div class="host-card__body">
+                <div class="host-card__head">
+                  <span>03</span>
+                  <strong>齋藤さんエアビ</strong>
+                </div>
+                <p>分からないことはその場で聞きながら、生活目線で島を見てください。</p>
+              </div>
             </li>
             <li>
-              <span>04</span>
-              <strong>油井民泊</strong>
+              <figure class="host-card__photo">
+                <span>宿の写真</span>
+              </figure>
+              <div class="host-card__body">
+                <div class="host-card__head">
+                  <span>04</span>
+                  <strong>油井民泊</strong>
+                </div>
+                <p>静かな集落で、買い物や移動の感覚も含めて確かめてみてください。</p>
+              </div>
             </li>
             <li>
-              <span>05</span>
-              <strong>きーちゃん</strong>
+              <figure class="host-card__photo">
+                <span>宿の写真</span>
+              </figure>
+              <div class="host-card__body">
+                <div class="host-card__head">
+                  <span>05</span>
+                  <strong>きーちゃん</strong>
+                </div>
+                <p>島の人と話しながら、自分に合う距離感を見つけてもらえたら嬉しいです。</p>
+              </div>
             </li>
           </ul>
+           <div class="host-note">
+            <p>※滞在先候補は順次追加していく予定です</p>
         </div>
-      </section>
+      </section> -->
 
       <section id="conditions" class="section section--soft">
         <div class="container">
@@ -260,13 +308,21 @@
             </p>
           </div>
 
-          <div class="condition-layout">
-            <section class="subsidy" aria-labelledby="subsidy-title">
-              <p class="subsidy__label">滞在費補助</p>
-              <h3 id="subsidy-title">70,000<span>円〜</span></h3>
-              <p>条件を満たした方に、滞在費として一律で補助します。</p>
-            </section>
+          <p class="subsidy-highlight">
+            条件を満たした方に、滞在費として<span class="subsidy-highlight__amount">70,000円</span><span class="subsidy-highlight__suffix">〜補助。</span>
+          </p>
 
+          <figure class="subsidy-visual">
+            <img
+              src="images/subsidy-infographic.webp"
+              alt="島内滞在にかかる費用（宿泊費・食費・体験費・町内交通費）の内訳と、条件を満たした方への一律70,000円の滞在費補助、滞在終了後の振込手続きの流れ"
+              width="1024"
+              height="582"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="condition-layout">
             <dl class="info-list">
               <div>
                 <dt>対象者</dt>
@@ -308,7 +364,7 @@
                 <p>参加できそうな時期、仕事環境、滞在条件をまずはLINEで確認します。お知らせもLINEで受け取れます。</p>
               </div>
               <figure class="flow__image">
-                <img src="images/step2.png" alt="スマートフォンでLINEの日程を確認しているイラスト" />
+                <img src="images/step2.webp" alt="スマートフォンでLINEの日程を確認しているイラスト" />
               </figure>
             </li>
             <li>
@@ -318,7 +374,7 @@
                 <p>名前、来訪予定時期、滞在中に試したいことをフォームで送ります。この時点では参加確定ではありません。</p>
               </div>
               <figure class="flow__image">
-                <img src="images/step1.png" alt="相談予約フォームを入力して送信しているイラスト" />
+                <img src="images/step1.webp" alt="相談予約フォームを入力して送信しているイラスト" />
               </figure>
             </li>
             <li>
@@ -328,7 +384,7 @@
                 <p>希望内容、日程、補助条件、滞在中の過ごし方を確認し、参加に進めるかをすり合わせます。</p>
               </div>
               <figure class="flow__image">
-                <img src="images/step3.png" alt="担当者とオンライン面談をしているイラスト" />
+                <img src="images/step3.webp" alt="担当者とオンライン面談をしているイラスト" />
               </figure>
             </li>
             <li>
@@ -338,7 +394,7 @@
                 <p>担当者が候補となる宿泊先を提案し、参加希望者と受け入れ先で直接話します。</p>
               </div>
               <figure class="flow__image">
-                <img src="images/step4.png" alt="滞在先の受け入れ先とオンラインで面談しているイラスト" />
+                <img src="images/step4.webp" alt="滞在先の受け入れ先とオンラインで面談しているイラスト" />
               </figure>
             </li>
             <li>
@@ -348,7 +404,7 @@
                 <p>参加者と受け入れ先の双方が同意した場合に正式決定し、13泊14日の移住体験に進みます。</p>
               </div>
               <figure class="flow__image">
-                <img src="images/step5.png" alt="隠岐の島に到着して受け入れ先に迎えられているイラスト" />
+                <img src="images/step5.webp" alt="隠岐の島に到着して受け入れ先に迎えられているイラスト" />
               </figure>
             </li>
           </ol>
@@ -401,12 +457,25 @@
 
     <footer class="site-footer">
       <p class="site-footer__name">おき暮らしごっこ</p>
-      <p>隠岐の島移住相談</p>
+      <p>隠岐移住計画</p>
       <p>© 2026 Okinoshima Relocation Consultation.</p>
     </footer>
 
     <div class="mobile-sticky" aria-label="スマートフォン固定CTA">
       <a class="button button--accent" href="https://lin.ee/7vChX4L">空き日程をLINEで確認する</a>
     </div>
+    <script>
+      (() => {
+        const stickyCta = document.querySelector(".mobile-sticky");
+        if (!stickyCta) return;
+
+        const toggleStickyCta = () => {
+          stickyCta.classList.toggle("is-visible", window.scrollY > 320);
+        };
+
+        toggleStickyCta();
+        window.addEventListener("scroll", toggleStickyCta, { passive: true });
+      })();
+    </script>
   </body>
 </html>
