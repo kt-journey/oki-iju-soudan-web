@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Analytics (gtag.js) — 隠岐移住計画と同じプロパティ。コンテンツグループでこのサイトだけ絞り込める -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYN6HDWBFW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("set", "content_group", "おき暮らしごっこ");
+      gtag("config", "G-LYN6HDWBFW", {
+        content_group: "おき暮らしごっこ",
+        cookie_prefix: "okigurashi"
+      });
+    </script>
     <meta
       name="description"
       content="おき暮らしごっこの相談予約フォームを送信しました。担当者から公式LINEでご連絡します。"

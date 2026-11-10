@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Analytics (gtag.js) — 隠岐移住計画と同じプロパティ。コンテンツグループでこのサイトだけ絞り込める -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYN6HDWBFW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("set", "content_group", "おき暮らしごっこ");
+      gtag("config", "G-LYN6HDWBFW", {
+        content_group: "おき暮らしごっこ",
+        cookie_prefix: "okigurashi"
+      });
+    </script>
     <meta
       name="description"
       content="隠岐の島で13泊14日の暮らしを試せる18歳以上60歳未満向けのお試し滞在プログラム。条件を満たす方に滞在費70,000円を補助。空き日程は公式LINEで確認できます。"
@@ -142,12 +154,18 @@
             </p>
           </div>
 
-          <div class="map-panel" aria-label="隠岐の島町のイラスト差し替え枠">
-            <p>隠岐の島町のイラスト</p>
+          <div class="map-panel">
+            <img
+              src="images/okinoshima-location.webp"
+              alt="日本地図上で島根県隠岐郡隠岐の島町の位置を拡大して示した地図"
+              width="604"
+              height="562"
+              loading="lazy"
+            />
           </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
           <dl class="area-list" aria-label="隠岐の島の地域紹介">
             <div>
               <dt>西郷</dt>
@@ -170,7 +188,7 @@
               <dd>北側の集落エリア。西郷から少し足をのばして、別の暮らしの表情を知る場所です。</dd>
             </div>
           </dl>
-        </div>
+        </div> -->
       </section>
 
       <section id="stay" class="section section--soft">
@@ -186,20 +204,37 @@
 
           <div class="life-grid">
             <article class="life-card">
-              <div class="photo-slot photo-slot--stay" role="img" aria-label="滞在先の和室で家族がくつろいでいる様子"></div>
+              <div class="photo-slot">
+                <img src="images/life-weekday.webp" alt="夜の祭りの会場で、笑いながら腕を上げている人たち" />
+              </div>
               <h3>平日は、いつものペースで</h3>
               <p>作業する、買い物に行く、近所を歩く。生活として続けられるかを確かめます。</p>
             </article>
             <article class="life-card">
-              <div class="photo-slot photo-slot--market" role="img" aria-label="良心市で買い物をしている地域の人の様子"></div>
+              <div class="photo-slot">
+                <img src="images/life-holiday.webp" alt="台所で鍋を使って料理をしている人" />
+              </div>
               <h3>休日は、気になる場所へ</h3>
               <p>海や山、地域のイベントへ。観光ではなく、暮らしの延長として出かけます。</p>
             </article>
             <article class="life-card">
-              <div class="photo-slot photo-slot--people" role="img" aria-label="島で暮らす家族が屋外で話している様子"></div>
+              <div class="photo-slot">
+                <img src="images/life-people.webp" alt="食卓を囲み、ギターに合わせて笑い合っている人たち" />
+              </div>
               <h3>人との距離感を知る</h3>
               <p>地域の人と話しながら、島で暮らす空気や関わり方を感じていきます。</p>
             </article>
+          </div>
+
+          <div class="life-extra">
+            <figure>
+              <img src="images/life-gathering.webp" alt="地域の催しで、飲み物を手に笑っている人たち" />
+              <figcaption>地域の催しで、顔を合わせる。</figcaption>
+            </figure>
+            <figure>
+              <img src="images/life-festival.webp" alt="夜の祭りを歩きながら笑い合っている人たち" />
+              <figcaption>夜の祭りを、歩いて眺める。</figcaption>
+            </figure>
           </div>
         </div>
       </section>
