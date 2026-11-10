@@ -33,8 +33,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./
-          # 要確認: Xserver 上の設置パス（ドメインの public_html 配下の ijutaiken フォルダ）
-          server-dir: /oki-ijukeikaku.net/public_html/ijutaiken/
+          # サブFTPアカウントの接続先が ijutaiken フォルダに限定されているため、ルートを指定
+          server-dir: /
           exclude: |
             **/.git*
             **/.git*/**
