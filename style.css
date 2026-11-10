@@ -30,6 +30,8 @@
   --color-surface: #ffffff;
   --color-accent: #1e6fa8;
   --color-accent-dark: #155c8e;
+  --color-line: #06c755;
+  --color-line-dark: #05a847;
   --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
   --font-hand: "Zen Maru Gothic", system-ui, sans-serif;
   --container: 1120px;
@@ -136,8 +138,8 @@ a {
   justify-content: center;
   min-height: 40px;
   padding: 0 14px;
-  border: 1px solid var(--color-accent);
-  background: var(--color-accent);
+  border: 1px solid var(--color-line);
+  background: var(--color-line);
   color: #fff;
   font-size: 13px;
   font-weight: 800;
@@ -297,6 +299,16 @@ a {
 
 .button--accent:hover {
   background: var(--color-accent-dark);
+}
+
+.button--line {
+  border-color: var(--color-line);
+  background: var(--color-line);
+  color: #fff;
+}
+
+.button--line:hover {
+  background: var(--color-line-dark);
 }
 
 .button--plain {
