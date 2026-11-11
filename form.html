@@ -110,7 +110,7 @@
 なお、このフォームを送信した時点では参加確定ではありません。
 日程や滞在内容等の調整後、双方合意のうえ参加決定となります。
 
-また、フォーム送信時に募集要項・参加条件・注意事項への同意を受け付けています。
+担当者からのご連絡は、原則として公式LINEで行います。まだ友だち追加がお済みでない方は、公式LINEの追加をお願いいたします。
 
 どうぞよろしくお願いいたします。
 
@@ -118,6 +118,9 @@
             />
             <input type="hidden" name="_url" id="form-url" value="" />
             <input type="hidden" name="受付ステータス" value="新規受付／参加未確定" />
+            <input type="hidden" name="LINE連携" id="line-linked" value="未連携" />
+            <input type="hidden" name="LINE表示名" id="line-display-name" value="" />
+            <input type="hidden" name="LINEユーザーID" id="line-user-id" value="" />
             <input type="hidden" name="同意内容バージョン" value="2026-09-01_v1.0" />
             <fieldset>
               <legend>基本情報</legend>
@@ -454,6 +457,29 @@
         submitButton.disabled = true;
         setFormStatus("送信内容を送信しています。", "info");
       });
+    </script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+      // ===== LINE連携（LIFF）設定：LIFF IDを入れると有効になります =====
+      const LIFF_ID = "2012546129-ApVvu8OD";
+      (async () => {
+        if (!LIFF_ID || typeof liff === "undefined") return;
+        try {
+          await liff.init({ liffId: LIFF_ID });
+          if (!liff.isLoggedIn()) {
+            if (new URLSearchParams(location.search).has("from")) {
+              liff.login({ redirectUri: location.href });
+            }
+            return;
+          }
+          const profile = await liff.getProfile();
+          document.getElementById("line-display-name").value = profile.displayName || "";
+          document.getElementById("line-user-id").value = profile.userId || "";
+          document.getElementById("line-linked").value = "連携済み";
+        } catch (e) {
+          // 連携できなくても、フォーム送信は通常どおりできます
+        }
+      })();
     </script>
   </body>
 </html>
