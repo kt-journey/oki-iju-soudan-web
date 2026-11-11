@@ -94,6 +94,7 @@
               </li>
             </ol>
             <div class="thanks-actions">
+              <a class="button button--line" id="line-oa-message" href="https://lin.ee/7vChX4L">LINEで「フォーム送信しました」と送る</a>
               <a class="button button--line" href="https://lin.ee/7vChX4L">公式LINEを開く</a>
               <a class="button button--plain" href="index.html">トップページへ戻る</a>
             </div>
@@ -107,5 +108,16 @@
       <p>隠岐移住計画</p>
       <p>© 2026 Okinoshima Relocation Consultation.</p>
     </footer>
+    <script>
+      // ===== LINE連携設定：公式LINEのベーシックID（@を含む）を入れると有効になります =====
+      const LINE_OA_BASIC_ID = "@077ttrzz";
+      if (LINE_OA_BASIC_ID) {
+        const text = encodeURIComponent("相談フォームを送信しました（おき暮らしごっこ）");
+        document.getElementById("line-oa-message").href =
+          "https://line.me/R/oaMessage/" + LINE_OA_BASIC_ID + "/?" + text;
+      } else {
+        document.getElementById("line-oa-message").style.display = "none";
+      }
+    </script>
   </body>
 </html>
