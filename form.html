@@ -64,6 +64,7 @@
             このフォームでは、参加希望内容の確認を行います。
             <br><strong>フォーム送信＝参加確定ではありません。</strong><br>送信後、担当者との日程調整・事前面談等を経て、参加決定となります。
           </p>
+          <p id="line-status" hidden style="color:#05a847;font-weight:700;"></p>
         </div>
       </section>
 
@@ -444,25 +445,51 @@
       emailInput.addEventListener("input", syncReplyTo);
       emailInput.addEventListener("change", syncReplyTo);
 
-      consultForm.addEventListener("submit", (event) => {
+      consultForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
         updateAge();
         syncReplyTo();
 
         if (!consultForm.checkValidity()) {
-          event.preventDefault();
           consultForm.reportValidity();
           return;
         }
 
         submitButton.disabled = true;
         setFormStatus("送信内容を送信しています。", "info");
+
+        // LINE連携の取得が終わっていなければ、最大3秒だけ待ってから送信する
+        if (window.__liffCapture) {
+          await Promise.race([
+            window.__liffCapture,
+            new Promise((resolve) => setTimeout(resolve, 3000)),
+          ]);
+        }
+
+        try {
+          const response = await fetch(
+            "https://formsubmit.co/ajax/soudan@oki-ijukeikaku.net",
+            {
+              method: "POST",
+              body: new FormData(consultForm),
+              headers: { Accept: "application/json" },
+            }
+          );
+          if (!response.ok) throw new Error("send failed");
+          // 送信できたら、自前の完了画面へ移動する
+          window.location.href = formNext.value;
+        } catch (e) {
+          // うまくいかなければ、通常の送信方法に切り替える
+          setFormStatus("送信方法を切り替えています。", "info");
+          consultForm.submit();
+        }
       });
     </script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
       // ===== LINE連携（LIFF）設定：LIFF IDを入れると有効になります =====
       const LIFF_ID = "2012546129-ApVvu8OD";
-      (async () => {
+      window.__liffCapture = (async () => {
         if (!LIFF_ID || typeof liff === "undefined") return;
         try {
           await liff.init({ liffId: LIFF_ID });
@@ -476,6 +503,11 @@
           document.getElementById("line-display-name").value = profile.displayName || "";
           document.getElementById("line-user-id").value = profile.userId || "";
           document.getElementById("line-linked").value = "連携済み";
+          const lineStatus = document.getElementById("line-status");
+          if (lineStatus && profile.displayName) {
+            lineStatus.textContent = "LINE連携済み：" + profile.displayName + " さんとして送信されます";
+            lineStatus.hidden = false;
+          }
         } catch (e) {
           // 連携できなくても、フォーム送信は通常どおりできます
         }
