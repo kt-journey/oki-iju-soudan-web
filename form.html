@@ -259,7 +259,7 @@
               </label>
             </fieldset>
 
-            <label class="consent">
+<!--             <label class="consent">
               <input type="checkbox" name="個人情報の取扱いへの同意" value="同意する" required />
               <span>入力内容を相談予約と日程調整のために利用することに同意します。</span>
             </label>
@@ -279,7 +279,7 @@
                 <section>
                   <h3>参加条件</h3>
                   <ul>
-                    <li>18歳以上60歳未満で、移住・二拠点生活・地域との関わりに関心がある方。</li>
+                    <li>18歳以上50歳未満で、移住・二拠点生活・地域との関わりに関心がある方。</li>
                     <li>滞在中のSNS発信、事後アンケート、領収書提出に協力できる方。</li>
                     <li>滞在後、必要書類と確認手続きが完了してから補助金をお支払いします。</li>
                   </ul>
@@ -299,7 +299,7 @@
             <label class="consent">
               <input type="checkbox" name="募集要項・参加条件・注意事項への同意" value="同意する" required />
               <span>私は、上記の募集要項・参加条件・注意事項をすべて確認し、内容に同意したうえで参加を希望します。</span>
-            </label>
+            </label> -->
 
             <div class="form-actions">
               <button class="button button--accent" type="submit">送信する</button>
@@ -418,9 +418,9 @@
         }
 
         ageValue.value = String(age);
-        if (age < 18 || age >= 60) {
-          ageOutput.textContent = `${age}歳（対象年齢は18歳以上60歳未満です）`;
-          birthdateInput.setCustomValidity("対象年齢は18歳以上60歳未満です。");
+        if (age < 18 || age >= 50) {
+          ageOutput.textContent = `${age}歳（対象年齢は18歳以上50歳未満です）`;
+          birthdateInput.setCustomValidity("対象年齢は18歳以上50歳未満です。");
           return;
         }
 
